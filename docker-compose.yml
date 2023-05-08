@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  nextjs:
+    build: .
+    image: devsbaraus/badomen_nextjs
+    ports:
+      - 3333:3333
+    container_name: netro_nextjs
+    restart: unless-stopped
+    env_file:
+      - .env.prod
+    environment:
+      - NODE_ENV=production
+      - PORT=3333

@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  nextjs:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: netro_nextjs
+    command: yarn dev -H 0.0.0.0
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
