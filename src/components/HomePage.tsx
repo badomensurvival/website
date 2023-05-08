@@ -2,6 +2,7 @@
 
 import { useContext } from 'react';
 import { BadOmenContext } from '@/contexts/BadOmenContext';
+// @ts-ignore
 import { plan_users } from '@prisma/client';
 
 type Props = {
