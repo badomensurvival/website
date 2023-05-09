@@ -9,6 +9,7 @@ COPY package.json package-lock.json ./
 RUN npm install --frozen-lockfile
 COPY . .
 # build
+RUN npx prisma generate
 RUN npm run build
 # remove dev dependencies
 RUN npm prune --ignore-scripts=true --prod
