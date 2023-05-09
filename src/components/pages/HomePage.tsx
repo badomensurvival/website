@@ -8,7 +8,7 @@ import { copyToClipboard } from '@/utils';
 import OnlinePlayersBox from '@/components/OnlinePlayersBox';
 import { ServerStatus } from '@/interfaces/status';
 import Hero from '@/components/layout/Hero';
-import AllPlayersRegistered from '@/components/pages/AllPlayersRegisteredBox';
+import AllPlayersRegistered from '@/components/AllPlayersRegisteredBox';
 
 type Props = {
   status: ServerStatus;
@@ -49,7 +49,7 @@ export default function HomePage({ allPlayers, status }: Props) {
               <h3 className="font-extrabold text-gray-800 dark:text-gray-200">
                 Mapa Dinâmico
               </h3>
-              <iframe src="https://map.badomen.fun/" className="w-full h-72" />
+              <iframe src="https://map.badomen.fun/" className="w-full h-96" />
             </div>
           </div>
         </div>
