@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 type Props = {};
 
 export default function Navbar({}: Props) {
@@ -49,13 +51,13 @@ export default function Navbar({}: Props) {
           </div>
           <div className="middle-menu-items flex space-x-4">
             <div className="flex items-center flex-shrink-0">
-              <a href="https://minetrax.xinecraft.com/">
+              <Link href="/">
                 <img
                   src="/img/badomen_horizontal.png"
                   alt="Site Header Logo"
                   className="logo block w-auto h-9"
                 />
-              </a>
+              </Link>
             </div>
           </div>
           <div className="right-menu-items flex space-x-4">
@@ -132,16 +134,16 @@ export default function Navbar({}: Props) {
               >
                 <path
                   className="inline-flex"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h16M4 18h16"
                 ></path>
                 <path
                   className="hidden"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
                 ></path>
               </svg>

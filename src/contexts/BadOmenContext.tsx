@@ -1,10 +1,20 @@
 'use client';
 
-import { createContext, ReactNode, useEffect, useRef, useState } from 'react';
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { ServerStatus } from '@/interfaces/status';
+import { fetchStatus } from '@/services';
 
 type Context = {
-  status: ServerStatus | undefined;
+  status: ServerStatus;
+  updateStatus: Dispatch<SetStateAction<ServerStatus>>;
 };
 
 export const BadOmenContext = createContext<Context>({} as Context);
@@ -13,23 +23,22 @@ type Props = {
   children: ReactNode;
 };
 export const BadOmenProvider = ({ children }: Props) => {
-  const [status, setStatus] = useState<ServerStatus>();
+  const [status, setStatus] = useState<ServerStatus>({} as ServerStatus);
   const timeout = useRef<NodeJS.Timeout>();
 
-  function fetchStatus() {
-    fetch('https://api.mcstatus.io/v2/status/java/badomen.fun')
-      .then((res) => res.json())
-      .then((data) => setStatus(data));
+  async function handleStatusUpdate() {
+    const newStatus = await fetchStatus();
+    setStatus(newStatus);
   }
 
   useEffect(() => {
-    fetchStatus();
-    timeout.current = setInterval(() => fetchStatus(), 30000);
+    handleStatusUpdate();
+    timeout.current = setInterval(() => handleStatusUpdate(), 30000);
     return () => clearInterval(timeout.current);
-  });
+  }, []);
 
   return (
-    <BadOmenContext.Provider value={{ status }}>
+    <BadOmenContext.Provider value={{ status, updateStatus: setStatus }}>
       {children}
     </BadOmenContext.Provider>
   );

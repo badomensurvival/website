@@ -1,16 +1,12 @@
 'use client';
-import { useContext } from 'react';
-import { BadOmenContext } from '@/contexts/BadOmenContext';
+import { copyToClipboard } from '@/utils';
+import { ServerStatus } from '@/interfaces/status';
 
-type Props = {};
+type Props = {
+  status: ServerStatus;
+};
 
-export default function Hero({}: Props) {
-  const { status } = useContext(BadOmenContext);
-
-  function copyToClipboard() {
-    navigator.clipboard.writeText('badomen.fun');
-  }
-
+export default function Hero({ status }: Props) {
   return (
     <div
       className="flex justify-center items-center"
@@ -27,14 +23,14 @@ export default function Hero({}: Props) {
       >
         <div>
           <span
-            className="text-gray-100 text-xl font-bold space-x-4"
-            onClick={copyToClipboard}
+            className="text-gray-100 text-xl font-bold"
+            onClick={() => copyToClipboard('badomen.fun')}
           >
-            Join{' '}
+            Junte-se aos{' '}
             <span className="text-light-blue-500 dark:text-light-blue-400 font-extrabold">
-              {status?.players.online}
+              {status?.players?.online}
             </span>{' '}
-            players on badomen.fun
+            jogadores no <span className="text-orange-400">badomen.fun</span>
           </span>
         </div>
       </button>
