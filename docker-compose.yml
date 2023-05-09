@@ -9,7 +9,7 @@ services:
     container_name: netro_nextjs
     restart: unless-stopped
     env_file:
-      - .env.prod
+      - .env
     environment:
       - NODE_ENV=production
       - PORT=3333
