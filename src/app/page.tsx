@@ -1,9 +1,8 @@
-import prisma from '@/lib/prisma';
 import HomePage from '@/components/pages/HomePage';
-import { fetchStatus } from '@/services';
+import { fetchStatus, getPlayerList } from '@/services';
 
 export default async function Page() {
-  const allPlayers = await prisma.plan_users.findMany();
+  const allPlayers = await getPlayerList();
   const status = await fetchStatus();
 
   return (

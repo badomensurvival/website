@@ -9,10 +9,11 @@ import OnlinePlayersBox from '@/components/OnlinePlayersBox';
 import { ServerStatus } from '@/interfaces/status';
 import Hero from '@/components/layout/Hero';
 import AllPlayersRegistered from '@/components/AllPlayersRegisteredBox';
+import { PlanPlayerData } from '@/services';
 
 type Props = {
   status: ServerStatus;
-  allPlayers: plan_users[];
+  allPlayers: PlanPlayerData[];
 };
 
 export default function HomePage({ allPlayers, status }: Props) {
