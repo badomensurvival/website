@@ -46,7 +46,7 @@ export interface PlanPlayerData {
   };
 }
 
-export async function getPlayerList() {
+export async function getPlayerList(): Promise<PlanPlayerData[]> {
   return fetch(`http://plan.badomen.fun/v1/players?server=Server%201`, {
     cache: 'no-store',
   })
@@ -59,7 +59,10 @@ export async function getPlayerList() {
         name: player.name.replace(regex, ''),
       }));
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+      return {} as PlanPlayerData[];
+    });
 }
 
 export async function fetchStatus(): Promise<ServerStatus> {
