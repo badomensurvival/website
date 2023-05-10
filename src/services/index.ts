@@ -61,7 +61,7 @@ export async function getPlayerList(): Promise<PlanPlayerData[]> {
     })
     .catch((err) => {
       console.log(err);
-      return {} as PlanPlayerData[];
+      return [] as PlanPlayerData[];
     });
 }
 
