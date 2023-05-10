@@ -6,5 +6,9 @@
     "theme": {
       "layout": "raw"
     }
+  },
+  "wiki": {
+    "type": "page",
+    "title": "Wiki"
   }
 }
