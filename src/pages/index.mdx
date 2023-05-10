@@ -1,22 +1,12 @@
-'use client';
-
 import { useContext, useEffect } from 'react';
-import { BadOmenContext } from '@/contexts/BadOmenContext';
-// @ts-ignore
-import { plan_users } from '@prisma/client';
-import { copyToClipboard } from '@/utils';
-import OnlinePlayersBox from '@/components/OnlinePlayersBox';
-import { ServerStatus } from '@/interfaces/status';
-import Hero from '@/components/layout/Hero';
-import AllPlayersRegistered from '@/components/AllPlayersRegisteredBox';
-import { PlanPlayerData } from '@/services';
+import { BadOmenContext } from '../contexts/BadOmenContext';
+import { copyToClipboard } from '../utils';
+import OnlinePlayersBox from '../components/OnlinePlayersBox';
+import Hero from '../components/Hero';
+import AllPlayersRegistered from '../components/AllPlayersRegisteredBox';
+import { fetchStatus, getPlayerList } from '../services';
 
-type Props = {
-  status: ServerStatus;
-  allPlayers: PlanPlayerData[];
-};
-
-export default function HomePage({ allPlayers, status }: Props) {
+export default function Page({ allPlayers, status }) {
   const { updateStatus } = useContext(BadOmenContext);
 
   useEffect(() => {
@@ -27,7 +17,8 @@ export default function HomePage({ allPlayers, status }: Props) {
     <>
       <Hero status={status} />
 
-      <div className="grid grid-cols-none gap-4 px-2 py-4 mx-auto md:grid-cols-4 md:gap-6 md:py-12 md:px-10 md:px-6 lg:px-16 max-w-screen-2xl">
+      <div
+        className="grid grid-cols-none gap-4 px-2 py-4 mx-auto md:grid-cols-4 md:gap-6 md:py-12 md:px-10 md:px-6 lg:px-16 max-w-screen-2xl">
         <div className="order-1 col-span-1 space-y-4 md:order-none">
           <div>
             <OnlinePlayersBox status={status} />
@@ -83,4 +74,16 @@ export default function HomePage({ allPlayers, status }: Props) {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  const allPlayers = await getPlayerList();
+  const status = await fetchStatus();
+
+  return {
+    props: {
+      allPlayers,
+      status
+    }
+  }
 }

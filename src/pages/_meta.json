@@ -1,0 +1,10 @@
+{
+  "index": {
+    "type": "page",
+    "title": "Bad Omen Hard Survival",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  }
+}
