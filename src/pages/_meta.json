@@ -10,5 +10,15 @@
   "wiki": {
     "type": "page",
     "title": "Wiki"
+  },
+  "discord-link": {
+    "href": "https://discord.gg/vPKqE6mrZk",
+    "title": "Discord",
+    "newWindow": true
+  },
+  "map-link": {
+    "href": "https://map.badomen.fun",
+    "title": "Mapa",
+    "newWindow": true
   }
 }
