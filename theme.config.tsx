@@ -28,14 +28,13 @@ const config: DocsThemeConfig = {
     const socialCard = 'https://badomen.fun/img/og.png';
     const description =
       'Bad Omen Hard Survival - Um servidor de Minecraft Hardcore Survival com economia, jobs, pets, dungeons e muito mais!';
-
+    const titleStr =
+      title && title != 'Index'
+        ? title + ' – Bad Omen'
+        : 'Bad Omen Hard Survival';
     return (
       <>
-        <title>
-          {title && title != 'Index'
-            ? title + ' – Bad Omen'
-            : 'Bad Omen Hard Survival'}
-        </title>
+        <title>{titleStr}</title>
         <meta charSet="utf-8" />
         <meta name="robots" content="follow, index" />
         <link rel="canonical" href={`https://badomen.fun${route}`} />
@@ -50,10 +49,7 @@ const config: DocsThemeConfig = {
         <meta name="twitter:image" content={socialCard} />
         <meta name="twitter:site:domain" content="badomen.fun" />
         <meta name="twitter:url" content="https://badomen.fun" />
-        <meta
-          name="og:title"
-          content={title ? title + ' – Bad Omen' : 'Bad Omen Hard Survival'}
-        />
+        <meta name="og:title" content={titleStr} />
         <meta name="og:image" content={socialCard} />
         <meta name="apple-mobile-web-app-title" content="Bad Omen" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
