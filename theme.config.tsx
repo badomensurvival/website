@@ -13,6 +13,9 @@ const config: DocsThemeConfig = {
       alt="Bad Omen Hard Survival Logo"
     />
   ),
+  search: {
+    placeholder: 'Pesquisar...',
+  },
   logoLink: '/',
   primaryHue: 45,
   darkMode: false,
