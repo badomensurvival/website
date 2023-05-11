@@ -17,7 +17,7 @@ export default function Page({ allPlayers, status }) {
       <Hero status={status} />
 
       <div
-        className="grid grid-cols-none gap-4 px-2 py-4 mx-auto md:grid-cols-3 md:gap-6 md:py-12 md:px-6 lg:px-16 max-w-screen-2xl">
+        className="grid grid-cols-none gap-4 px-2 py-4 mx-auto md:grid-cols-4 md:gap-6 md:py-12 md:px-6 lg:px-16 max-w-screen-2xl">
         <div className="order-1 col-span-1 space-y-4 md:order-none">
           <div>
             <OnlinePlayersBox status={status} />
@@ -41,6 +41,13 @@ export default function Page({ allPlayers, status }) {
               <iframe src="https://map.badomen.fun/" className="w-full h-96" />
             </div>
           </div>
+        </div>
+        <div className="order-1 col-span-1 space-y-4 md:order-none">
+
+          <iframe id='kofiframe' src='https://ko-fi.com/devbaraus/?hidefeed=true&widget=true&embed=true&preview=true'
+                  className='border-none w-full bg-transparent h-[600px]'
+                  title='devbaraus'></iframe>
+
         </div>
 
       </div>
