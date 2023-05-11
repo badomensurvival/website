@@ -14,11 +14,13 @@
   "discord-link": {
     "href": "https://discord.gg/vPKqE6mrZk",
     "title": "Discord",
+    "type": "page",
     "newWindow": true
   },
   "map-link": {
     "href": "https://map.badomen.fun",
     "title": "Mapa",
+    "type": "page",
     "newWindow": true
   }
 }
