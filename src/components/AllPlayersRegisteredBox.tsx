@@ -2,8 +2,6 @@ import { ServerStatus } from '@/interfaces/status';
 //@ts-ignore
 import { plan_users } from '@prisma/client';
 import Cravatar from '@/components/Cravatar';
-import fromUnixTime from 'date-fns/fromUnixTime';
-import { format } from 'date-fns';
 import { PlanPlayerData } from '@/services';
 
 type Props = {
@@ -13,94 +11,45 @@ type Props = {
 
 export default function AllPlayersRegistered({ status, players }: Props) {
   return (
-    <div className="p-3 bg-white dark:bg-cool-gray-800 rounded shadow space-y-2">
+    <div className="p-3 bg-white dark:bg-gray-800 rounded shadow space-y-2 relative overflow-x-auto">
       <h3 className="font-extrabold text-gray-800 dark:text-gray-200">
         Jogadores Registrados
       </h3>
 
-      <table className="table-auto overflow-x-auto w-full">
-        <thead className="bg-gray-100 dark:bg-cool-gray-900 dark:bg-opacity-50 text-gray-700 dark:text-gray-300">
+      <table className="table-auto w-full text-sm text-left text-gray-500 dark:text-gray-400 break-keep">
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
-            <th
-              scope="col"
-              className="p-1 text-xs font-bold text-center uppercase tracking-wider"
-            >
-              #
-            </th>
-            <th
-              scope="col"
-              className="p-1 text-left text-xs font-bold uppercase tracking-wider"
-            >
+            <th scope="col" className="px-6 py-3">
               Nome
             </th>
-            <th
-              scope="col"
-              className="p-1 text-left text-xs font-bold uppercase tracking-wider"
-            >
+            <th scope="col" className="px-6 py-3">
               Jobs
             </th>
-            <th
-              scope="col"
-              className="p-1 text-left text-xs font-bold uppercase tracking-wider"
-            >
+            <th scope="col" className="px-6 py-3">
               Economia
             </th>
-            <th
-              scope="col"
-              className="p-1 text-right text-xs font-bold uppercase tracking-wider"
-            >
+            <th scope="col" className="px-6 py-3">
               Tempo Jogado
             </th>
           </tr>
         </thead>
-        <tbody className="bg-white dark:bg-cool-gray-800">
+        <tbody>
           {players.map((player, index) => (
-            <tr key={player.name}>
-              <td className="p-1 text-sm text-light-blue-400 font-extrabold text-center">
-                <span className="border-2 rounded text-sm px-1 border-light-blue-300 bg-light-blue-50 dark:bg-cool-gray-800">
-                  {index + 1}
-                </span>
-              </td>
-
-              <td className="p-1">
-                <div className="flex items-center">
-                  <div className="flex-shrink-0 h-6 w-6">
-                    <Cravatar
-                      className="h-6 w-6"
-                      playerName={player?.name ?? ''}
-                    />
-                  </div>
-                  <div className="ml-4">
-                    <div className="text-sm text-gray-900 focus:outline-none cursor-pointer hover:underline">
-                      <span className="text-gray-700 dark:text-gray-300 font-bold text-sm truncate">
-                        {player.name}
-                      </span>
-                    </div>
-                  </div>
+            <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+              <th
+                scope="row"
+                className="px-6 py-2 font-medium text-gray-900  dark:text-white"
+              >
+                <div className="flex items-center gap-2 break-keep">
+                  <Cravatar playerName={player.name} className="h-6" />{' '}
+                  {player.name}
                 </div>
+              </th>
+              <td className="px-6 py-2 truncate">{player.jobs.d}</td>
+              <td className="px-6 py-2 truncate">
+                C$ {parseFloat(player.balance.v).toFixed(2)}
               </td>
-              <td className="p-1">
-                <div className="text-sm text-gray-900 focus:outline-none cursor-pointer hover:underline">
-                  <span className="text-gray-700 dark:text-gray-300 font-bold text-sm truncate">
-                    {player.jobs.v}
-                  </span>
-                </div>
-              </td>
-
-              <td className="p-1">
-                <div className="text-sm text-gray-900 focus:outline-none cursor-pointer hover:underline">
-                  <span className="text-gray-700 dark:text-gray-300 font-bold text-sm truncate">
-                    C$ {parseFloat(player.balance.v).toFixed(2)}
-                  </span>
-                </div>
-              </td>
-              <td className="p-1">
-                <div className="text-sm text-right text-gray-900 focus:outline-none cursor-pointer hover:underline">
-                  <span className="text-gray-700 dark:text-gray-300 font-bold text-sm truncate">
-                    {player.activePlaytime.d}
-                  </span>
-                </div>
-              </td>
+              <td className="px-6 py-2 truncate">{player.activePlaytime.d}</td>
             </tr>
           ))}
         </tbody>
