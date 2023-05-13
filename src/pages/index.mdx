@@ -4,6 +4,7 @@ import OnlinePlayersBox from '../components/OnlinePlayersBox';
 import Hero from '../components/Hero';
 import AllPlayersRegistered from '../components/AllPlayersRegisteredBox';
 import { fetchStatus, getPlayerList } from '../services';
+import { copyToClipboard } from '../utils';
 
 export default function Page({ allPlayers, status }) {
   const { updateStatus } = useContext(BadOmenContext);
@@ -44,9 +45,34 @@ export default function Page({ allPlayers, status }) {
         </div>
         <div className="order-1 col-span-1 space-y-4 md:order-none">
 
-          <iframe id='kofiframe' src='https://ko-fi.com/devbaraus/?hidefeed=true&widget=true&embed=true&preview=true'
-                  className='border-none w-full bg-transparent h-[600px]'
-                  title='devbaraus'></iframe>
+          <div>
+            <div className='bg-white dark:bg-gray-800 rounded px-4 py-3 shadow'>
+              <h3 className='font-extrabold text-gray-800 dark:text-gray-200'>Faça sua doação</h3>
+              <div >
+                <img src='/img/qrcode_pix.png' alt='Pix' className='w-5/6 mx-auto' />
+
+                <p className='text-center text-gray-500 dark:text-gray-400'>Nome: <span
+                  className='text-gray-800 dark:text-gray-200'>Bruno de Araújo Alves</span></p>
+                <button
+                  type="button"
+                  onClick={() => copyToClipboard('aa6a9e86-76dd-43e0-962a-bacac4dcaece')}
+                  className="text-center w-full font-extrabold mt-3 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 rounded p-2 hover:text-light-blue-500 dark:hover:text-light-blue-400 hover:bg-light-blue-50 dark:hover:bg-gray-900 hover:border-light-blue-500 dark:hover:border-gray-800 focus:ring focus:ring-light-blue-200 focus:ring-opacity-50 transition duration-150 ease-in-out focus:outline-none inline-flex items-center text-xs justify-center gap-2"
+                >
+                  <img src='/img/logo_pix.png' alt='Logo Pix' className='h-4' />
+                  <span>aa6a9e86-76dd-43e0-962a-bacac4dcaece</span>
+                </button>
+              </div>
+
+              <hr className='my-4'/>
+
+              <iframe id='kofiframe'
+                      src='https://ko-fi.com/devbaraus/?hidefeed=true&widget=true&embed=true&preview=true'
+                      className='border-none w-full bg-transparent h-[700px]'
+                      title='devbaraus'></iframe>
+
+            </div>
+
+          </div>
 
         </div>
 
