@@ -1,1 +1,153 @@
-🏗️ EM CONSTRUÇÃO 🏗️
+# Lands :desert_island:
+
+O plugin Lands torna muito fácil para os jogadores protegerem seus prédios e contêineres, evitando todas as formas de sabotagem. Os jogadores podem gerenciar suas terras por meio de menus GUI bem organizados, que são fáceis de usar. Além disso, eles têm a opção de possuir múltiplas terras. Este plugin oferece a combinação perfeita de áreas baseadas em blocos e seleção de chunks para reivindicação, permitindo inclusive limitar a altura mínima e máxima da reivindicação.
+
+### Recursos Principais
+- Proteção de construções e contêineres contra griefing.
+- Gerenciamento de terras através de menus GUI intuitivos.
+- Suporte para múltiplas terras por jogador.
+- Reivindicação de áreas por meio do comando /claim ou ferramenta de reivindicação.
+- Criação de nações e declaração de guerra contra outras nações.
+- Possibilidade de capturar áreas dos oponentes durante as guerras.
+
+### Especificidades
+
+- A quantidade de terras que um jogador pode ter cresce conforme o Rank.
+- A quantidade de chunks de cada terra cresce conforme o Rank.
+- O primeiro chunk pago custará **C$ 1.000,00**, o segundo **C$ 1.200,00**, o terceiro **C$ 1.440,00** e assim por diante (aumento de 20% a cada chunk).
+- Diariamente serão cobrados **C$ 50,00** por chunk, para manter o terreno. Caso o jogador não tenha dinheiro suficiente, os chunks serão deletados até sobrar 2 (chunks grátis).
+- Ao deletar uma terra, o jogador receberá de volta 75% do valor investido.
+
+### Expiração
+
+Após determinado tempo de inatividade, o terreno será deletado automaticamente. O tempo de inatividade é calculado da seguinte forma:
+
+| Tempo Jogado (até) | Inatividade |
+|:------------:|:------------------:|
+| 15 minutos        | 1 dia            |
+| 1 hora        | 7 dias           |
+| 6 horas        | 14 dias           |
+| 12 horas        | 30 dias           |
+| 1 dia        | 60 dias           |
+| 30 dias        | 360 dias           |
+
+### Comandos
+
+#### Geral
+> **/lands** - Abre o menu.
+
+> **/lands help \[página\]** - Exibe os usos do comando Lands.
+
+> **/lands claim** - Reivindica pedaços de terreno.
+
+> **/lands claim auto** - Reivindica pedaços de terreno enquanto anda.
+
+> **/lands create** - Cria um terreno.
+
+> **/lands merge \<terreno\>** - Mescla um terreno (parâmetro) com seu outro terreno.
+
+> **/lands accept \<terreno\>** - Aceita convites.
+
+> **/lands chat \[terreno\] \<mensagem\>** - Conversa com o terreno.
+
+> **/lands delete** - Exclui seu terreno.
+
+> **/lands deny** - Recusa convites.
+
+> **/lands deposit \[terreno\] \<quantidade\>** - Deposita dinheiro no banco do terreno.
+
+> **/lands edit \<terreno\>** - Entra no modo de edição para um terreno.
+
+> **/lands info \[terreno\]** - Mostra informações sobre um terreno.
+
+> **/lands invites** - Abre o GUI de convites recebidos.
+
+> **/lands leave \<terreno\>** - Sai de um terreno.
+
+> **/lands map** - Mostra o mapa dos terrenos.
+
+> **/lands menu** - Abre o GUI dos terrenos.
+
+> **/lands menu here** - Abre o GUI dos terrenos para o pedaço de terreno em que você está.
+
+> **/lands rename \[terreno\] \<novo nome\>** - Renomeia o terreno.
+
+> **/lands selection** - Seleciona uma região para ações como /lands claim.
+
+> **/lands setrole \<jogador\> \<área\> \<função\>** - Define a função de um jogador.
+
+> **/lands setspawn** - Define o spawn do terreno.
+
+> **/lands spawn \[terreno\]** - Teleporta para o spawn do terreno.
+
+> **/lands teleport \<x\> \<z\>** - Teleporta para um pedaço de terreno reivindicado.
+
+> **/lands top** - Mostra os dez melhores terrenos.
+
+> **/lands trust \<jogador\> \[área\]** - Concede confiança a um jogador.
+
+> **/lands unclaim** - Desreivindica um pedaço de terreno.
+
+> **/lands unclaim auto** - Desreivindica pedaços de terreno enquanto anda.
+
+> **/lands unclaimall** - Desreivindica todos os pedaços de terreno do terreno.
+
+> **/lands untrust \<jogador\> \[área\]** - Revoga a confiança de um jogador.
+
+> **/lands view** - Visualiza as bordas do terreno.
+
+> **/lands unstuck** - Teleporta para o pedaço de terreno não reivindicado mais próximo. Isso permite que você se teleporte para fora de reivindicações caso esteja preso dentro delas.
+
+> **/lands wild \[mundo\] \[jogador\]** - Teleporta para uma localização aleatória. O parâmetro opcional "jogador" está disponível apenas para jogadores com a permissão "lands.admin.command.wild". Você pode personalizar esse comando no arquivo de configuração.
+
+> **/lands wild \[mundo\] \[jogador\]** - Executa o comando /wild para outros jogadores.
+
+> **/lands withdraw \[terreno\] \<quantidade\>** - Retira dinheiro do banco do terreno.
+
+> **/lands taxes** - Visualiza os pagamentos de impostos futuros.
+
+> **/lands rent** - Gerencia aluguéis.
+
+> **/lands relations** - Gerencia as relações.
+
+> **/lands confirmtp** - Confirma um destino inseguro.
+
+#### Nações
+
+> **/nations create** - Cria uma nação.
+
+> **/nations accept** - Aceita um convite.
+
+> **/nations delete** - Exclui a nação.
+
+> **/nations deny** - Recusa um convite.
+
+> **/nations leave** - Sai da nação.
+
+> **/nations rename** - Renomeia a nação.
+
+> **/nations menu** - Abre o menu da nação.
+
+> **/nations setcapital** - Define a capital da nação.
+
+> **/nations spawn** - Teleporta para o spawn da nação.
+
+> **/nations trust** - Adiciona um terreno.
+
+> **/nations untrust** - Remove um terreno.
+
+> **/nations relations** - Gerencia as relações.
+
+> **/nations top** - Visualiza as principais nações.
+
+#### Guerra
+
+> **/wars declare** - Declara guerra contra um terreno ou nação.
+
+> **/wars deny** - Recusa a declaração mútua de guerra.
+
+> **/wars info** - Informações sobre a guerra atual.
+
+> **/wars menu** - Abre o menu da guerra atual.
+
+> **/wars spawn** - Teleporta para a fronteira inimiga.

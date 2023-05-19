@@ -33,7 +33,6 @@ export default function Page({ allPlayers, status }) {
           ></iframe>
         </div>
         <div className="order-3 col-span-1 space-y-4 md:col-span-2 md:order-none">
-          <AllPlayersRegistered status={status} players={allPlayers} />
           <div>
             <div className="bg-white dark:bg-gray-800 rounded px-4 py-3 shadow">
               <h3 className="font-extrabold text-gray-800 dark:text-gray-200">
@@ -42,6 +41,8 @@ export default function Page({ allPlayers, status }) {
               <iframe src="https://map.badomen.fun/" className="w-full h-96" />
             </div>
           </div>
+          <AllPlayersRegistered status={status} players={allPlayers} />
+
         </div>
         <div className="order-1 col-span-1 space-y-4 md:order-none">
 

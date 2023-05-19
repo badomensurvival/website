@@ -35,7 +35,10 @@ export default function AllPlayersRegistered({ status, players }: Props) {
         </thead>
         <tbody>
           {players.map((player, index) => (
-            <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+            <tr
+              key={player.name}
+              className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+            >
               <th
                 scope="row"
                 className="px-6 py-2 font-medium text-gray-900  dark:text-white"
