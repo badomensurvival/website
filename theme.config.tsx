@@ -16,6 +16,11 @@ const config: DocsThemeConfig = {
   search: {
     placeholder: 'Pesquisar...',
   },
+  useNextSeoProps() {
+    return {
+      titleTemplate: '%s – Bad Omen',
+    };
+  },
   logoLink: '/',
   primaryHue: 45,
   darkMode: false,
