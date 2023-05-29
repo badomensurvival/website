@@ -10,8 +10,8 @@ export default function Page({ allPlayers, status }) {
   const { updateStatus } = useContext(BadOmenContext);
 
   useEffect(() => {
-    updateStatus(status);
-  }, []);
+    updateStatus && updateStatus(status);
+  }, [status]);
 
   return (
     <>

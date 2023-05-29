@@ -18,7 +18,7 @@ const config: DocsThemeConfig = {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: '%s – Bad Omen',
+      titleTemplate: '%s – Bad Omen Hard Survival',
     };
   },
   logoLink: '/',
@@ -35,7 +35,7 @@ const config: DocsThemeConfig = {
       'Bad Omen Hard Survival - Um servidor de Minecraft Hardcore Survival com economia, jobs, pets, dungeons e muito mais!';
     const titleStr =
       title && title != 'Index'
-        ? title + ' – Bad Omen'
+        ? title + ' – Bad Omen Hard Survival'
         : 'Bad Omen Hard Survival';
     return (
       <>
