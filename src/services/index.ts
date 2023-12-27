@@ -66,7 +66,7 @@ export async function getPlayerList(): Promise<PlanPlayerData[]> {
 }
 
 export async function fetchStatus(): Promise<ServerStatus> {
-  return fetch('https://mcapi.us/server/status?ip=badomen.com.br', {
+  return fetch('https://mcapi.us/server/status?ip=play.badomen.com.br', {
     cache: 'no-store',
   })
     .then((res) => res.json())

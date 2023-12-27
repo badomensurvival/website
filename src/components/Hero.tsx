@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function Hero({ status }: Props) {
-  const ip = 'badomen.com.br';
+  const ip = 'play.badomen.com.br';
   const backgroundImageBrightness = 0.7;
 
   return (

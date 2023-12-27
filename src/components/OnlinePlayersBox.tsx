@@ -36,10 +36,10 @@ export default function OnlinePlayersBox({ status }: Props) {
 
         <button
           type="button"
-          onClick={() => copyToClipboard('badomen.com.br')}
+          onClick={() => copyToClipboard('play.badomen.com.br')}
           className="text-center w-full font-extrabold mt-3 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 rounded p-2 hover:text-light-blue-500 dark:hover:text-light-blue-400 hover:bg-light-blue-50 dark:hover:bg-neutral-900 hover:border-light-blue-500 dark:hover:border-neutral-800 focus:ring focus:ring-light-blue-200 focus:ring-opacity-50 transition duration-150 ease-in-out focus:outline-none"
         >
-          <span>badomen.com.br</span>
+          <span>play.badomen.com.br</span>
         </button>
       </div>
     </div>
