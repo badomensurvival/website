@@ -47,7 +47,7 @@ export interface PlanPlayerData {
 }
 
 export async function getPlayerList(): Promise<PlanPlayerData[]> {
-  return fetch(`http://plan.badomen.com.br/v1/players?server=Server%201`, {
+  return fetch(`https://plan.badomen.com.br/v1/players?server=Server%201`, {
     cache: 'no-store',
   })
     .then((res) => res.json())
