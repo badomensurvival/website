@@ -31,7 +31,7 @@ export default function Hero({ status }: Props) {
           >
             Junte-se aos{' '}
             <span className="text-light-blue-500 dark:text-light-blue-400 font-extrabold">
-              {status?.players?.online}
+              {status?.players?.now}
             </span>{' '}
             jogadores no <span className="text-orange-400">{ip}</span>
           </span>
