@@ -7,7 +7,7 @@ export default function Discord() {
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: 'https://discord.gg/vPKqE6mrZk',
+      destination: 'https://discord.gg/WxK98rxgtP',
       permanent: false,
     },
   };

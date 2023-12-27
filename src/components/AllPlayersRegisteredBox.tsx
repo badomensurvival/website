@@ -11,13 +11,13 @@ type Props = {
 
 export default function AllPlayersRegistered({ status, players }: Props) {
   return (
-    <div className="p-3 bg-white dark:bg-gray-800 rounded shadow space-y-2 relative overflow-x-auto">
-      <h3 className="font-extrabold text-gray-800 dark:text-gray-200">
+    <div className="p-3 bg-white dark:bg-neutral-800 rounded shadow space-y-2 relative overflow-x-auto">
+      <h3 className="font-extrabold text-neutral-800 dark:text-neutral-200">
         Jogadores Registrados
       </h3>
 
-      <table className="table-auto w-full text-sm text-left text-gray-500 dark:text-gray-400 break-keep">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <table className="table-auto w-full text-sm text-left text-neutral-500 dark:text-neutral-400 break-keep">
+        <thead className="text-xs text-neutral-700 uppercase bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-400">
           <tr>
             <th scope="col" className="px-6 py-3">
               Nome
@@ -37,11 +37,11 @@ export default function AllPlayersRegistered({ status, players }: Props) {
           {players.map((player, index) => (
             <tr
               key={player.name}
-              className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+              className="bg-white border-b dark:bg-neutral-900 dark:border-neutral-700"
             >
               <th
                 scope="row"
-                className="px-6 py-2 font-medium text-gray-900  dark:text-white"
+                className="px-6 py-2 font-medium text-neutral-900  dark:text-white"
               >
                 <div className="flex items-center gap-2 break-keep">
                   <Cravatar playerName={player.name} className="h-6" />{' '}

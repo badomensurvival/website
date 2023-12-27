@@ -47,7 +47,7 @@ export interface PlanPlayerData {
 }
 
 export async function getPlayerList(): Promise<PlanPlayerData[]> {
-  return fetch(`http://plan.badomen.fun/v1/players?server=Server%201`, {
+  return fetch(`http://plan.badomen.com.br/v1/players?server=Server%201`, {
     cache: 'no-store',
   })
     .then((res) => res.json())
@@ -66,7 +66,7 @@ export async function getPlayerList(): Promise<PlanPlayerData[]> {
 }
 
 export async function fetchStatus(): Promise<ServerStatus> {
-  return fetch('https://api.mcstatus.io/v2/status/java/badomen.fun', {
+  return fetch('https://mcapi.us/server/status?ip=badomen.com.br', {
     cache: 'no-store',
   })
     .then((res) => res.json())

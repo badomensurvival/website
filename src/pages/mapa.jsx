@@ -6,7 +6,7 @@ export default function Mapa() {
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: 'https://map.badomen.fun/',
+      destination: 'https://map.badomen.com.br/',
       permanent: false,
     },
   };

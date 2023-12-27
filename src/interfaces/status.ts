@@ -19,18 +19,29 @@ export interface Motd {
 }
 
 export interface ServerStatus {
+  status: "success";
   online: boolean;
-  host: string;
-  port: number;
-  eula_blocked: boolean;
-  retrieved_at: number;
-  expires_at: number;
-  version: Version;
-  players: {
-    online: number;
-    max: number;
-    list: Player[];
+  motd: string;
+  motd_json: {
+    extra: {
+      bold?: boolean;
+      color?: string;
+      text: string;
+    }[];
+    text: string;
   };
-  motd: Motd;
-  icon?: string;
-}
+  favicon: null | string;
+  error: null | string;
+  players: {
+    max: number;
+    now: number;
+    sample: string[];
+  };
+  server: {
+    name: string;
+    protocol: number;
+  };
+  last_updated: string;
+  duration: string;
+};
+
