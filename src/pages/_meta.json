@@ -11,6 +11,12 @@
     "type": "page",
     "title": "Wiki"
   },
+  "plan-link": {
+    "href": "https://plan.badomen.com.br",
+    "title": "Player Analytics",
+    "type": "page",
+    "newWindow": true
+  },
   "discord-link": {
     "href": "https://discord.gg/WxK98rxgtP",
     "title": "Discord",

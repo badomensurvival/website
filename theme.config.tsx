@@ -104,7 +104,7 @@ const config: DocsThemeConfig = {
           <p className="mt-6 text-xs">
             Desenvolvido por{' '}
             <a
-              href="https://baraus.dev?ref=badomen.fun"
+              href="https://baraus.dev?ref=badomen.com.br"
               target="_blank"
               className="nx-underline"
             >
