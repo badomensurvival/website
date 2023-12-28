@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { copyToClipboard } from '@/utils';
 import { ServerStatus } from '@/interfaces/status';
 
@@ -25,12 +26,14 @@ export default function Hero({ status }: Props) {
           onClick={() => copyToClipboard(ip)}
           className="flex justify-center items-center cursor-pointer hover:rainbow mb-4 md:mb-0"
         >
-          <img
+          <Image
             src="/img/header-creeper.png"
             alt="Discord"
             style={{
               filter: 'invert(1)',
             }}
+            width={64}
+            height={64}
             className="w-16 h-16"
           />
           <div className="flex flex-col">
