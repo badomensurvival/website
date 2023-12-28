@@ -8,6 +8,9 @@ const withNextra = nextra({
   mdxOptions: {
     remarkPlugins: [[remarkEmoji, { emoticon: true }]],
   },
+  images: {
+    unoptimized: true,
+  }
 });
 
 export default withNextra();
