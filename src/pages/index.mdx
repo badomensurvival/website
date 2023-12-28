@@ -16,31 +16,18 @@ export default function Page(){
           <div>
             <OnlinePlayersBox/>
           </div>
-           <div className='bg-white dark:bg-neutral-800 rounded px-4 py-3 shadow'>
-              <h3 className='font-extrabold text-neutral-800 dark:text-neutral-200'>Seja um apoiador</h3>
-              <div >
-                <img src='/img/qrcode_pix.png' alt='Pix' className='w-5/6 mx-auto' />
+          <div>
+           <iframe
+            src="https://discord.com/widget?id=1186647850097057873&amp;theme=dark"
+            width="100%"
+            height="500"
+            frameBorder="0"
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+          ></iframe>
+ 
 
-                <p className='text-center text-neutral-500 dark:text-neutral-400'>Nome: <span
-                  className='text-neutral-800 dark:text-neutral-200'>Bruno de Araújo Alves</span></p>
-                <button
-                  type="button"
-                  onClick={() => copyToClipboard('aa6a9e86-76dd-43e0-962a-bacac4dcaece')}
-                  className="text-center w-full font-extrabold mt-3 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 rounded p-2 hover:text-light-blue-500 dark:hover:text-light-blue-400 hover:bg-light-blue-50 dark:hover:bg-neutral-900 hover:border-light-blue-500 dark:hover:border-neutral-800 focus:ring focus:ring-light-blue-200 focus:ring-opacity-50 transition duration-150 ease-in-out focus:outline-none inline-flex items-center text-xs justify-center gap-2"
-                >
-                  <img src='/img/logo_pix.png' alt='Logo Pix' className='h-4' />
-                  <span>aa6a9e86-76dd-43e0-962a-bacac4dcaece</span>
-                </button>
-              </div>
-
-             {/*<hr className='my-4'/>
-
-              <iframe id='kofiframe'
-                      src='https://ko-fi.com/devbaraus/?hidefeed=true&widget=true&embed=true&preview=true'
-                      className='border-none w-full bg-transparent h-[700px]'
-                      title='devbaraus'></iframe>*/}
-
-            </div>
+          </div>
+           
          
         </div>
         <div className="order-3 col-span-1 space-y-4 md:col-span-2 md:order-none">
@@ -55,18 +42,32 @@ export default function Page(){
 
         </div>
         <div className="order-1 col-span-1 space-y-4 md:order-none">
+        <div className='bg-white dark:bg-neutral-800 rounded px-4 py-3 shadow'>
+              <h3 className='font-extrabold text-neutral-800 dark:text-neutral-200'>Seja um apoiador</h3>
+              {/*<div >
+                <img src='/img/qrcode_pix.png' alt='Pix' className='w-5/6 mx-auto' />
 
-          <div>
-           <iframe
-            src="https://discord.com/widget?id=1186647850097057873&amp;theme=dark"
-            width="100%"
-            height="500"
-            frameBorder="0"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-          ></iframe>
- 
+                <p className='text-center text-neutral-500 dark:text-neutral-400'>Nome: <span
+                  className='text-neutral-800 dark:text-neutral-200'>Bruno de Araújo Alves</span></p>
+                <button
+                  type="button"
+                  onClick={() => copyToClipboard('aa6a9e86-76dd-43e0-962a-bacac4dcaece')}
+                  className="text-center w-full font-extrabold mt-3 border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-300 rounded p-2 hover:text-light-blue-500 dark:hover:text-light-blue-400 hover:bg-light-blue-50 dark:hover:bg-neutral-900 hover:border-light-blue-500 dark:hover:border-neutral-800 focus:ring focus:ring-light-blue-200 focus:ring-opacity-50 transition duration-150 ease-in-out focus:outline-none inline-flex items-center text-xs justify-center gap-2"
+                >
+                  <img src='/img/logo_pix.png' alt='Logo Pix' className='h-4' />
+                  <span>aa6a9e86-76dd-43e0-962a-bacac4dcaece</span>
+                </button>
+              </div>*/}
 
-          </div>
+             {/*<hr className='my-4'/>*/}
+
+              <iframe id='kofiframe'
+                      src='https://ko-fi.com/devbaraus/?hidefeed=true&widget=true&embed=true&preview=true'
+                      className='border-none w-full bg-transparent h-[700px]'
+                      title='devbaraus'></iframe>
+
+            </div>
+          
 
         </div>
 

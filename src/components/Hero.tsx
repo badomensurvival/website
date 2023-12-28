@@ -35,11 +35,9 @@ export default function Hero() {
             height={64}
             className="w-16 h-16"
           />
-          <div className="flex flex-col">
-            <p className="font-bold text-left">
-              <span className="uppercase">
-                {status?.onlinePlayers} Players Online
-              </span>
+          <div className="flex flex-col items-start">
+            <p className="font-bold text-left uppercase">
+              {status?.onlinePlayers} Players Online
             </p>
             <p className="font-semibold text-sm mt-1.5 uppercase text-orange-400">
               {ip}
