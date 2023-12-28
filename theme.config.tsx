@@ -30,9 +30,9 @@ const config: DocsThemeConfig = {
   head: function useHead() {
     const { title } = useConfig();
     const { route } = useRouter();
-    const socialCard = 'https://badomen.fun/img/og.png';
+    const socialCard = 'https://badomen.com.br/img/og.png';
     const description =
-      'Bad Omen Hard Survival - Um servidor de Minecraft Hardcore Survival com economia, jobs, pets, dungeons e muito mais!';
+      'Bad Omen Hard Survival - Um servidor com armaduras, encantamentos, pets, terrenos e mais!';
     const titleStr =
       title && title != 'Index'
         ? title + ' – Bad Omen Hard Survival'
@@ -42,7 +42,7 @@ const config: DocsThemeConfig = {
         <title>{titleStr}</title>
         <meta charSet="utf-8" />
         <meta name="robots" content="follow, index" />
-        <link rel="canonical" href={`https://badomen.fun${route}`} />
+        <link rel="canonical" href={`https://badomen.com.br${route}`} />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <meta name="msapplication-TileColor" content="#fff" />
         <meta name="theme-color" content="#fff" />
@@ -52,8 +52,8 @@ const config: DocsThemeConfig = {
         <meta name="og:description" content={description} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content={socialCard} />
-        <meta name="twitter:site:domain" content="badomen.fun" />
-        <meta name="twitter:url" content="https://badomen.fun" />
+        <meta name="twitter:site:domain" content="badomen.com.br" />
+        <meta name="twitter:url" content="https://badomen.com.br" />
         <meta name="og:title" content={titleStr} />
         <meta name="og:image" content={socialCard} />
         <meta name="apple-mobile-web-app-title" content="Bad Omen" />
@@ -78,7 +78,7 @@ const config: DocsThemeConfig = {
     key: '2.0-release',
     text: (
       <a
-        href="https://discord.gg/vPKqE6mrZk"
+        href="https://discord.gg/WxK98rxgtP"
         target="_blank"
         rel="noreferrer"
         className="flex items-center justify-center hover:nx-text-primary-600 nx-gap-2"

@@ -1,25 +1,5 @@
-export interface Version {
-  name_raw: string;
-  name_clean: string;
-  name_html: string;
-  protocol: number;
-}
-
-export interface Player {
-  uuid: string;
-  name_raw: string;
-  name_clean: string;
-  name_html: string;
-}
-
-export interface Motd {
-  raw: string;
-  clean: string;
-  html: string;
-}
-
 export interface ServerStatus {
-  status: "success";
+  status: 'success';
   online: boolean;
   motd: string;
   motd_json: {
@@ -35,7 +15,10 @@ export interface ServerStatus {
   players: {
     max: number;
     now: number;
-    sample: string[];
+    sample: {
+      id: string;
+      name: string;
+    }[];
   };
   server: {
     name: string;
@@ -43,5 +26,4 @@ export interface ServerStatus {
   };
   last_updated: string;
   duration: string;
-};
-
+}

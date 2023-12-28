@@ -19,19 +19,19 @@ export default function OnlinePlayersBox({ status }: Props) {
         </h3>
 
         <div className="mt-3 text-neutral-500 flex flex-wrap justify-center">
-          {/* {status?.players.now > 0 ? (
+          {status?.players.now > 0 ? (
             status?.players?.sample.map((player) => (
-              <div key={player.uuid} className="flex-shrink-0 mr-1 mb-1">
-                <Tooltip message={player.name_clean}>
-                  <Cravatar playerName={player?.name_clean} className="w-10" />
+              <div key={player.id} className="flex-shrink-0 mr-1 mb-1">
+                <Tooltip message={player.name}>
+                  <Cravatar playerName={player?.name} className="w-10" />
                 </Tooltip>
               </div>
             ))
-          ) : ( */}
+          ) : (
             <div className="italic p-1 rounded text-center text-neutral-400">
               Sem jogadores online
             </div>
-          {/* )} */}
+          )}
         </div>
 
         <button

@@ -20,23 +20,46 @@ export default function Hero({ status }: Props) {
         height: '45vh',
       }}
     >
-      <button
-        type="button"
-        className="bg-neutral-800 bg-opacity-75 items-center px-5 py-3 rounded mx-3"
-      >
-        <div>
-          <span
-            className="text-neutral-100 text-xl font-bold"
-            onClick={() => copyToClipboard(ip)}
-          >
-            Junte-se aos{' '}
-            <span className="text-light-blue-500 dark:text-light-blue-400 font-extrabold">
-              {status?.players?.now}
-            </span>{' '}
-            jogadores no <span className="text-orange-400">{ip}</span>
-          </span>
-        </div>
-      </button>
+      <div className="flex flex-col items-center justify-around w-4/5 md:flex-row text-neutral-100 text-xl font-bold">
+        <button
+          onClick={() => copyToClipboard(ip)}
+          className="flex justify-center items-center cursor-pointer hover:rainbow mb-4 md:mb-0"
+        >
+          <img
+            src="/img/header-creeper.png"
+            alt="Discord"
+            style={{
+              filter: 'invert(1)',
+            }}
+            className="w-16 h-16"
+          />
+          <div className="flex flex-col">
+            <p className="font-bold text-left">
+              <span className="uppercase">
+                {status?.players?.now} Players Online
+              </span>
+            </p>
+            <p className="font-semibold text-sm mt-1.5 uppercase text-orange-400">
+              {ip}
+            </p>
+          </div>
+        </button>
+      </div>
+      {/*<button*/}
+      {/*  type="button"*/}
+      {/*  className="bg-neutral-800 bg-opacity-75 items-center px-5 py-3 rounded mx-3"*/}
+      {/*>*/}
+      {/*  <div>*/}
+      {/*    <span*/}
+      {/*      className="text-neutral-100 text-xl font-bold"*/}
+      {/*      onClick={() => copyToClipboard(ip)}*/}
+      {/*    >*/}
+      {/*      Junte-se aos{' '}*/}
+      {/*      <span className="font-extrabold">{status?.players?.now}</span>{' '}*/}
+      {/*      jogadores no <span className="text-orange-400">{ip}</span>*/}
+      {/*    </span>*/}
+      {/*  </div>*/}
+      {/*</button>*/}
     </div>
   );
 }

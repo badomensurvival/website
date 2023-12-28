@@ -1,4 +1,3 @@
-import { Player } from '@/interfaces/status';
 import { classNames } from '@/utils';
 
 type Props = {
