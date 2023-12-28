@@ -19,7 +19,7 @@ export default function OnlinePlayersBox({ status }: Props) {
         </h3>
 
         <div className="mt-3 text-neutral-500 flex flex-wrap justify-center">
-          {status?.players.online > 0 ? (
+          {status?.players?.online > 0 ? (
             status?.players?.list.map((player) => (
               <div key={player.uuid} className="flex-shrink-0 mr-1 mb-1">
                 <Tooltip message={player.name_clean}>
