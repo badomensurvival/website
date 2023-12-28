@@ -10,11 +10,12 @@ import {
   useState,
 } from 'react';
 import { ServerStatus } from '@/interfaces/status';
-import { fetchStatus } from '@/services';
+import { fetchOnlinePlayers, fetchStatus } from '@/services';
+import { OnlinePlayers } from '@/interfaces/players';
 
 type Context = {
   status: ServerStatus;
-  updateStatus: Dispatch<SetStateAction<ServerStatus>>;
+  onlinePlayers: OnlinePlayers;
 };
 
 export const BadOmenContext = createContext<Context>({} as Context);
@@ -24,21 +25,27 @@ type Props = {
 };
 export const BadOmenProvider = ({ children }: Props) => {
   const [status, setStatus] = useState<ServerStatus>({} as ServerStatus);
+  const [onlinePlayers, setOnlinePlayers] = useState<OnlinePlayers>([]);
   const timeout = useRef<NodeJS.Timeout>();
 
   async function handleStatusUpdate() {
     const newStatus = await fetchStatus();
     setStatus(newStatus);
+
+    if (newStatus.onlinePlayers > 0) {
+      const players = await fetchOnlinePlayers()
+      setOnlinePlayers(players);
+    }
   }
 
   useEffect(() => {
     handleStatusUpdate();
-    timeout.current = setInterval(() => handleStatusUpdate(), 30000);
+    timeout.current = setInterval(() => handleStatusUpdate(), 5000);
     return () => clearInterval(timeout.current);
   }, []);
 
   return (
-    <BadOmenContext.Provider value={{ status, updateStatus: setStatus }}>
+    <BadOmenContext.Provider value={{ status, onlinePlayers }}>
       {children}
     </BadOmenContext.Provider>
   );

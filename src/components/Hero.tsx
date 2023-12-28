@@ -1,13 +1,12 @@
 'use client';
 import Image from 'next/image';
 import { copyToClipboard } from '@/utils';
-import { ServerStatus } from '@/interfaces/status';
+import { useContext } from 'react';
+import { BadOmenContext } from '@/contexts/BadOmenContext';
 
-type Props = {
-  status: ServerStatus;
-};
+export default function Hero() {
+  const { status } = useContext(BadOmenContext);
 
-export default function Hero({ status }: Props) {
   const ip = 'play.badomen.com.br';
   const backgroundImageBrightness = 0.7;
 
@@ -39,7 +38,7 @@ export default function Hero({ status }: Props) {
           <div className="flex flex-col">
             <p className="font-bold text-left">
               <span className="uppercase">
-                {status?.players?.online} Players Online
+                {status?.onlinePlayers} Players Online
               </span>
             </p>
             <p className="font-semibold text-sm mt-1.5 uppercase text-orange-400">

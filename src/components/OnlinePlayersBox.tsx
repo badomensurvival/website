@@ -4,26 +4,30 @@ import Tooltip from '@/components/Tooltip';
 import Cravatar from '@/components/Cravatar';
 import { ServerStatus } from '@/interfaces/status';
 import { copyToClipboard } from '@/utils';
+import { useContext } from 'react';
+import { BadOmenContext } from '@/contexts/BadOmenContext';
 
-type Props = { status: ServerStatus };
 
-export default function OnlinePlayersBox({ status }: Props) {
+export default function OnlinePlayersBox() {
+  const { status, onlinePlayers } = useContext(BadOmenContext);
+
+
   return (
     <div>
       <div className="p-3 sm:px-5 bg-white dark:bg-neutral-800 rounded shadow">
         <h3 className="font-extrabold text-neutral-800 dark:text-neutral-200">
           Jogadores Online
           <span className="float-right text-green-500 font-semibold">
-            {status?.players?.online} / {status?.players?.max}
+            {status?.onlinePlayers} / {status?.maxPlayers}
           </span>
         </h3>
 
         <div className="mt-3 text-neutral-500 flex flex-wrap justify-center">
-          {status?.players?.online > 0 ? (
-            status?.players?.list.map((player) => (
+          {onlinePlayers.length ? (
+            onlinePlayers.map((player) => (
               <div key={player.uuid} className="flex-shrink-0 mr-1 mb-1">
-                <Tooltip message={player.name_clean}>
-                  <Cravatar playerName={player?.name_clean} className="w-10" />
+                <Tooltip message={player.displayName}>
+                  <Cravatar playerName={player?.displayName} className="w-10" />
                 </Tooltip>
               </div>
             ))

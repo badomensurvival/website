@@ -1,50 +1,18 @@
+import { PlanPlayerData } from '@/interfaces/plan';
 import { ServerStatus } from '@/interfaces/status';
+import { OnlinePlayers } from '@/interfaces/players';
 
-export interface PlanPlayerData {
-  sessions: string;
-  jobs: {
-    d: string;
-    v: string;
-  };
-  index: {
-    d: string;
-    v: string;
-  };
-  registered: {
-    d: string;
-    v: string;
-  };
-  permissionGroups: {
-    d: string;
-    v: string;
-  };
-  seen: {
-    d: string;
-    v: string;
-  };
-  balance: {
-    d: string;
-    v: string;
-  };
-  name: string;
-  activePlaytime: {
-    d: string;
-    v: string;
-  };
-  primaryGroup: {
-    d: string;
-    v: string;
-  };
-  geolocation: string;
-  group: {
-    d: string;
-    v: string;
-  };
-  username: {
-    d: string;
-    v: string;
-  };
-}
+export const apiFetcher = (url: string, config?: RequestInit) =>
+  fetch(url, {
+    ...config,
+    cache: 'no-store',
+    headers: {
+      'Content-Type': 'application/json',
+      'Key': String(process.env.API_KEY),
+      ...config?.headers,
+    }
+  }).then((res) => res.json());
+
 
 export async function getPlayerList(): Promise<PlanPlayerData[]> {
   return fetch(`https://plan.badomen.com.br/v1/players?server=Server%201`, {
@@ -66,9 +34,15 @@ export async function getPlayerList(): Promise<PlanPlayerData[]> {
 }
 
 export async function fetchStatus(): Promise<ServerStatus> {
-  return fetch('https://mcapi.us/server/status?ip=play.badomen.com.br', {
-    cache: 'no-store',
-  })
+  return fetch(`/api/status`)
+    .then((res) => res.json())
+    .then((data) => data)
+    .catch((err) => console.log(err));
+}
+
+
+export async function fetchOnlinePlayers(): Promise<OnlinePlayers> {
+  return fetch(`/api/online-players`)
     .then((res) => res.json())
     .then((data) => data)
     .catch((err) => console.log(err));

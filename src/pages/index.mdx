@@ -5,22 +5,16 @@ import Hero from '../components/Hero';
 import { fetchStatus } from '../services';
 import { copyToClipboard } from '../utils';
 
-export default function Page({ status }) {
-  const { updateStatus } = useContext(BadOmenContext);
-
-  useEffect(() => {
-    updateStatus && updateStatus(status);
-  }, [status]);
-
+export default function Page(){
   return (
     <>
-      <Hero status={status} />
+      <Hero/>
 
       <div
         className="grid grid-cols-none gap-4 px-2 py-4 mx-auto md:grid-cols-4 md:gap-6 md:py-12 md:px-6 lg:px-16 max-w-screen-2xl">
         <div className="order-1 col-span-1 space-y-4 md:order-none">
           <div>
-            <OnlinePlayersBox status={status} />
+            <OnlinePlayersBox/>
           </div>
            <div className='bg-white dark:bg-neutral-800 rounded px-4 py-3 shadow'>
               <h3 className='font-extrabold text-neutral-800 dark:text-neutral-200'>Seja um apoiador</h3>
@@ -79,14 +73,4 @@ export default function Page({ status }) {
       </div>
     </>
   );
-}
-
-export async function getServerSideProps() {
-  const status = await fetchStatus();
-
-  return {
-    props: {
-      status
-    }
-  }
 }

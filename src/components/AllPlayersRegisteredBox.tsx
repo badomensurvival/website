@@ -1,8 +1,6 @@
 import { ServerStatus } from '@/interfaces/status';
-//@ts-ignore
-import { plan_users } from '@prisma/client';
 import Cravatar from '@/components/Cravatar';
-import { PlanPlayerData } from '@/services';
+import { PlanPlayerData } from '@/interfaces/plan';
 
 type Props = {
   status: ServerStatus;
