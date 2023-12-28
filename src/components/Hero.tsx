@@ -36,7 +36,7 @@ export default function Hero({ status }: Props) {
           <div className="flex flex-col">
             <p className="font-bold text-left">
               <span className="uppercase">
-                {status?.players?.now} Players Online
+                {status?.players?.online} Players Online
               </span>
             </p>
             <p className="font-semibold text-sm mt-1.5 uppercase text-orange-400">

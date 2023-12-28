@@ -1,29 +1,35 @@
 export interface ServerStatus {
-  status: 'success';
   online: boolean;
-  motd: string;
-  motd_json: {
-    extra: {
-      bold?: boolean;
-      color?: string;
-      text: string;
-    }[];
-    text: string;
-  };
-  favicon: null | string;
-  error: null | string;
-  players: {
-    max: number;
-    now: number;
-    sample: {
-      id: string;
-      name: string;
-    }[];
-  };
-  server: {
-    name: string;
+  host: string;
+  port: number;
+  ip_address: string;
+  eula_blocked: boolean;
+  retrieved_at: number;
+  expires_at: number;
+  version: {
+    name_raw: string;
+    name_clean: string;
+    name_html: string;
     protocol: number;
   };
-  last_updated: string;
-  duration: string;
+  players: {
+    online: number;
+    max: number;
+    list: {
+      uuid: string;
+      name_raw: string;
+      name_clean: string;
+      name_html: string;
+    }[];
+  };
+  motd: {
+    raw: string;
+    clean: string;
+    html: string;
+  };
+  icon: null;
+  mods: any[]; // Assuming mods can be of any type, adjust as needed
+  software: null;
+  plugins: any[]; // Assuming plugins can be of any type, adjust as needed
+  srv_record: null;
 }
