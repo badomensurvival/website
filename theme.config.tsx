@@ -99,6 +99,7 @@ const config: DocsThemeConfig = {
   },
   footer: {
     text: (
+      <>
       <div className="flex w-full items-center nx-justify-between gap-4">
         <div>
           <p className="mt-6 text-xs">
@@ -118,6 +119,8 @@ const config: DocsThemeConfig = {
           </p>
         </div>
       </div>
+      <script defer data-domain="badomen.com.br" src="https://plausible.lab.baraus.dev/js/script.js"/>
+      </>
     ),
   },
 };
