@@ -2,17 +2,20 @@ import { PlanPlayerData } from '@/interfaces/plan';
 import { ServerStatus } from '@/interfaces/status';
 import { OnlinePlayers } from '@/interfaces/players';
 
-export const apiFetcher = (url: string, config?: RequestInit) =>
-  fetch(url, {
+export function apiFetcher<T = any>(
+  url: string,
+  config?: RequestInit
+): Promise<T> {
+  return fetch(url, {
     ...config,
     cache: 'no-store',
     headers: {
       'Content-Type': 'application/json',
-      'Key': String(process.env.API_KEY),
+      Key: String(process.env.API_KEY),
       ...config?.headers,
-    }
+    },
   }).then((res) => res.json());
-
+}
 
 export async function getPlayerList(): Promise<PlanPlayerData[]> {
   return fetch(`https://plan.badomen.com.br/v1/players?server=Server%201`, {
@@ -39,7 +42,6 @@ export async function fetchStatus(): Promise<ServerStatus> {
     .then((data) => data)
     .catch((err) => console.log(err));
 }
-
 
 export async function fetchOnlinePlayers(): Promise<OnlinePlayers> {
   return fetch(`/api/online-players`)

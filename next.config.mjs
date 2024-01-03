@@ -10,6 +10,14 @@ const withNextra = nextra({
   },
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'minotar.net',
+        port: '',
+        pathname: '/avatar/:username',
+      },
+    ],
   }
 });
 
