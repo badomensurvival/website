@@ -7,11 +7,11 @@ type Props = {
 };
 export default function Cravatar({ playerName, className }: Props) {
   return (
-    <Image
+    <img
       width={64}
       height={64}
       className={classNames('aspect-square', className)}
-      src={`https://cravatar.eu/avatar/${playerName}.png`}
+      src={`https://minotar.net/avatar/${playerName}`}
       alt={playerName}
     />
   );

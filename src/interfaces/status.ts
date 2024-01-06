@@ -1,3 +1,5 @@
+import { OnlinePlayers } from '@/interfaces/players';
+
 export type ServerStatus = {
   name: string;
   health: {
@@ -28,6 +30,5 @@ export type ServerStatus = {
     name: string;
   }[];
   maxPlayers: number;
-  onlinePlayers: number;
+  onlinePlayers: OnlinePlayers;
 };
-

@@ -37,7 +37,7 @@ export default function Hero() {
           />
           <div className="flex flex-col items-start">
             <p className="font-bold text-left uppercase">
-              {status?.onlinePlayers} Players Online
+              {status?.onlinePlayers?.length} Players Online
             </p>
             <p className="font-semibold text-sm mt-1.5 uppercase text-orange-400">
               {ip}

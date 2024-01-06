@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 type Props = {
-  message: string;
+  message: ReactNode;
   children: ReactNode;
 };
 export default function Tooltip({ message, children }: Props) {

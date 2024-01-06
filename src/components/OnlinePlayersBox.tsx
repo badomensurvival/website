@@ -3,22 +3,20 @@
 import Tooltip from '@/components/Tooltip';
 import Cravatar from '@/components/Cravatar';
 import { ServerStatus } from '@/interfaces/status';
-import { copyToClipboard } from '@/utils';
+import { clearDisplayName, copyToClipboard } from '@/utils';
 import { useContext } from 'react';
 import { BadOmenContext } from '@/contexts/BadOmenContext';
-
 
 export default function OnlinePlayersBox() {
   const { status, onlinePlayers } = useContext(BadOmenContext);
 
-
   return (
     <div>
       <div className="p-3 sm:px-5 bg-white dark:bg-neutral-800 rounded shadow">
-        <h3 className="font-extrabold text-neutral-800 dark:text-neutral-200">
+        <h3 className="font-extrabold text-neutral-800 dark:text-neutral-200 mb-2">
           Jogadores Online
           <span className="float-right text-green-500 font-semibold">
-            {status?.onlinePlayers} / {status?.maxPlayers}
+            {status?.onlinePlayers?.length} / {status?.maxPlayers}
           </span>
         </h3>
 
@@ -26,8 +24,29 @@ export default function OnlinePlayersBox() {
           {onlinePlayers.length ? (
             onlinePlayers.map((player) => (
               <div key={player.uuid} className="flex-shrink-0 mr-1 mb-1">
-                <Tooltip message={player.displayName}>
-                  <Cravatar playerName={player?.displayName} className="w-10" />
+                <Tooltip
+                  message={
+                    <div className="">
+                      <p className="text-center font-semibold">
+                        {clearDisplayName(player?.displayName)}
+                      </p>
+                      <p className="text-center whitespace-nowrap">
+                        <span>❤️ {player.health}</span> /{' '}
+                        <span>🌾 {player.hunger}</span>
+                      </p>
+                      <p className="text-center whitespace-nowrap">
+                        🧭{' '}
+                        {player.location.map((loc) => (
+                          <span key={loc}>{loc} </span>
+                        ))}
+                      </p>
+                    </div>
+                  }
+                >
+                  <Cravatar
+                    playerName={clearDisplayName(player?.displayName)}
+                    className="w-10"
+                  />
                 </Tooltip>
               </div>
             ))

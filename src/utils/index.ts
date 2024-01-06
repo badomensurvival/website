@@ -42,3 +42,7 @@ export function objectFormData(obj: any): FormData {
 
   return formData;
 }
+
+export function clearDisplayName(displayName: string): string {
+  return displayName.replace(/§./g, '');
+}

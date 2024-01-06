@@ -31,11 +31,7 @@ export const BadOmenProvider = ({ children }: Props) => {
   async function handleStatusUpdate() {
     const newStatus = await fetchStatus();
     setStatus(newStatus);
-
-    if (newStatus.onlinePlayers > 0) {
-      const players = await fetchOnlinePlayers()
-      setOnlinePlayers(players);
-    }
+    setOnlinePlayers(newStatus?.onlinePlayers ?? []);
   }
 
   useEffect(() => {
