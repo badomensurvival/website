@@ -31,13 +31,13 @@ export default function OnlinePlayersBox() {
                         {clearDisplayName(player?.displayName)}
                       </p>
                       <p className="text-center whitespace-nowrap">
-                        <span>❤️ {player.health}</span> /{' '}
-                        <span>🌾 {player.hunger}</span>
+                        <span>❤️ {player.health.toFixed(2)}</span> /{' '}
+                        <span>🌾 {player.hunger.toFixed(2)}</span>
                       </p>
                       <p className="text-center whitespace-nowrap">
                         🧭{' '}
                         {player.location.map((loc) => (
-                          <span key={loc}>{loc} </span>
+                          <span key={loc}>{loc.toFixed(2)} </span>
                         ))}
                       </p>
                     </div>
